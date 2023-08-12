@@ -1,11 +1,11 @@
 import { Text, View, Image, StyleSheet } from "react-native"
 import top from "../../../../assets/produtores/logo.png"
 
-export default function Top(){
+    export default function Top({topImage, welcomeCaption, welcomeTitle}){
     return <View style={styles.top}>
-        <Image source={top} style={styles.topImage} />
-        <Text style={styles.welcomeTitle}>Olá Analista</Text>
-        <Text style={styles.welcomeCaption}>Confira os ciclistas cadastrados</Text>
+        <Image source={topImage} style={styles.topImage} />
+        <Text style={styles.welcomeTitle}>{welcomeCaption}</Text>
+        <Text style={styles.welcomeCaption}>{welcomeTitle}</Text>
     </View>
 }
 
