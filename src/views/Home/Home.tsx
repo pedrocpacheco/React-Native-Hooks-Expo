@@ -1,5 +1,9 @@
-import Top from "./components/Top.tsx"
+import Cyclists from "./components/Cyclists"
+import Top from "./components/Top"
 
 export default function Home(){
-    return <Top />
+    return <>
+        <Top />
+        <Cyclists />
+    </>
 }
