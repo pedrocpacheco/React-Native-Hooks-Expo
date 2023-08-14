@@ -1,9 +1,9 @@
-import topImage from "../../../../assets/produtores/logo.png"
+import topImg from "../../assets/produtores/logo.png"
 
 const top = {
-    topImage,
-    welcomeTitle: "Olá Analista",
-    welcomeCaption: "Confira os ciclistas cadastrados"
+    topImage: topImg,
+    welcome: "Olá Analista",
+    caption: "Confira os ciclistas cadastrados"
 }
 
 export default top;
