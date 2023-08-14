@@ -43,3 +43,5 @@ const cyclists = {
         }
     ]
 }
+
+export default cyclists;
