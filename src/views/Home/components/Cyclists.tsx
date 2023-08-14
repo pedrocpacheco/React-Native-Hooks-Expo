@@ -16,13 +16,24 @@ export default function Cyclists(){
   }, []);
 
   const ListHeader = () => {
-    return <Text>{ tytle } </Text>
+    return <Text style={styles.tytle}>{ tytle } </Text>
   }
 
   return <FlatList
           data={list}
           renderItem={({ item: { name } }) => <Text>{name}</Text>}
+          keyExtractor={({ name }) => name}
           ListHeaderComponent={ ListHeader } 
           />
 }
 
+const styles = StyleSheet.create({
+  tytle: {
+    fontSize: 20,
+    lineHeight: 32,
+    marginHorizontal: 16,
+    marginTop: 16,
+    fontWeight: "bold",
+    color: "#464646"
+  }
+})
