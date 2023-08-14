@@ -3,7 +3,7 @@ import { FlatList, Text, StyleSheet } from "react-native";
 
 import { getCyclists } from "../../../services/getData";
 
-export default function Cyclists(){
+export default function Cyclists({ top: Top }){
   const [tytle, setTytle] = useState(""); // ? Inicial
   const [list, setList] = useState([]);
 
@@ -16,7 +16,10 @@ export default function Cyclists(){
   }, []);
 
   const ListHeader = () => {
-    return <Text style={styles.tytle}>{ tytle } </Text>
+    return <>
+          <Top></Top>
+          <Text style={styles.tytle}>{ tytle } </Text>
+      </>
   }
 
   return <FlatList
