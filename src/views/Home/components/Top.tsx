@@ -1,14 +1,28 @@
+import React from "react"
 import { Text, View, Image, StyleSheet } from "react-native"
 
 import { getTop } from "../../../services/getData"
 import logo from "../../../../assets/produtores/logo.png"
 
-export default function Top(){
+class Top extends React.Component{
+    state = { top: { welcome: "", caption: "" } }
+
+    updateTop(){
+        const retorno = getTop();
+        this.setState({ top: retorno })
+    }
+
+    componentDidMount(){
+        this.updateTop();
+    }
+
+    render(){ 
     return <View style={styles.top}>
         <Image source={logo} style={styles.topImage} />
-        <Text style={styles.welcomeTitle}>a</Text>
-        <Text style={styles.welcomeCaption}>a</Text>
+        <Text style={styles.welcomeTitle}>{this.state.top.welcome}</Text>
+        <Text style={styles.welcomeCaption}>{this.state.top.caption}</Text>
     </View>
+    }
 }
 
 const styles = StyleSheet.create({
@@ -32,3 +46,5 @@ const styles = StyleSheet.create({
         lineHeight: 26
     }
 })
+
+export default Top;

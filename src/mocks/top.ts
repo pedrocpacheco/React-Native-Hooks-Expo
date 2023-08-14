@@ -1,7 +1,7 @@
-import topImg from "../../assets/produtores/logo.png"
+import topImage from "../../assets/produtores/logo.png"
 
 const top = {
-    topImage: topImg,
+    topImage,
     welcome: "Olá Analista",
     caption: "Confira os ciclistas cadastrados"
 }
