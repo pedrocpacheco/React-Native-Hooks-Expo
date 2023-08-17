@@ -1,7 +1,7 @@
 import green from "../../assets/produtores/green.png"
 import salad from "../../assets/produtores/salad.png"
 import grow from "../../assets/produtores/grow.png"
-import potager from "../../assets/produtores/green.png"
+import potager from "../../assets/produtores/potager.png"
 import jennyJack from "../../assets/produtores/jenny-jack.png"
 
 const generateRandonNumber = (min: number, max: number) =>{

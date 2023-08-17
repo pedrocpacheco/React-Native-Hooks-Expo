@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { FlatList, Text, StyleSheet } from "react-native";
 
 import { getCyclists } from "../../../services/getData";
+import Cyclist from "./Cyclist";
 
 export default function Cyclists({ top: Top }){
   const [tytle, setTytle] = useState(""); // ? Inicial
@@ -9,7 +10,7 @@ export default function Cyclists({ top: Top }){
 
   useEffect(() => {
     const retorno = getCyclists();
-    setTytle(retorno.tytle); // ! Seta aqui
+    setTytle(retorno.tytle); 
     setList(retorno.list)
     console.log(retorno);
     
@@ -18,15 +19,16 @@ export default function Cyclists({ top: Top }){
   const ListHeader = () => {
     return <>
           <Top></Top>
-          <Text style={styles.tytle}>{ tytle } </Text>
+          <Text style={styles.tytle}>{ tytle }</Text>
       </>
   }
 
   return <FlatList
           data={list}
-          renderItem={({ item: { name } }) => <Text>{name}</Text>}
+          renderItem={({ item }) => <Cyclist {...item}/>}
           keyExtractor={({ name }) => name}
           ListHeaderComponent={ ListHeader } 
+          
           />
 }
 
