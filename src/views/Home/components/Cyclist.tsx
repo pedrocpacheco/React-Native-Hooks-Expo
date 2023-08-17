@@ -1,12 +1,17 @@
 import React from "react";
 import { Text, View, Image, StyleSheet } from "react-native";
 
+import Stars from "../../../components/Stars";
+
 export default function Cyclist({ name, image, dystance, stars }){
   return <View style={styles.card}>
     <Image source={image} style={styles.image} accessibilityLabel={name}/>
     <View style={styles.info}>
-      <Text>{ name }</Text>
-      <Text>{ dystance }</Text>
+      <View>
+        <Text style={styles.name}>{ name }</Text>
+        <Stars quantity={ stars }/>
+      </View>
+      <Text style={styles.dystance}>{ dystance }</Text>
     </View>
   </View>
 }
