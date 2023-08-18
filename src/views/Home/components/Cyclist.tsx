@@ -1,19 +1,21 @@
-import React from "react";
-import { Text, View, Image, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { Text, View, TouchableOpacity, Image, StyleSheet } from "react-native";
 
 import Stars from "../../../components/Stars";
 
 export default function Cyclist({ name, image, dystance, stars }){
-  return <View style={styles.card}>
+  const[selected, setSelected] = useState(false);
+
+  return <TouchableOpacity style={styles.card} onPress={() => setSelected(!selected)}>
     <Image source={image} style={styles.image} accessibilityLabel={name}/>
     <View style={styles.info}>
       <View>
         <Text style={styles.name}>{ name }</Text>
-        <Stars quantity={ stars }/>
+        <Stars quantity={ stars } editable={selected} big={selected}/>
       </View>
       <Text style={styles.dystance}>{ dystance }</Text>
     </View>
-  </View>
+  </TouchableOpacity>
 }
 
 const styles = StyleSheet.create({
