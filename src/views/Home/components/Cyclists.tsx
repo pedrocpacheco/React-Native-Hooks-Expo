@@ -12,13 +12,11 @@ export default function Cyclists({ top: Top }){
     const retorno = getCyclists();
     setTytle(retorno.tytle); 
     setList(retorno.list)
-    console.log(retorno);
-    
   }, []);
 
   const ListHeader = () => {
     return <>
-          <Top></Top>
+          <Top />
           <Text style={styles.tytle}>{ tytle }</Text>
       </>
   }
@@ -28,7 +26,6 @@ export default function Cyclists({ top: Top }){
           renderItem={({ item }) => <Cyclist {...item}/>}
           keyExtractor={({ name }) => name}
           ListHeaderComponent={ ListHeader } 
-          
           />
 }
 
