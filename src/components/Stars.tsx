@@ -1,20 +1,29 @@
-import { Text, Image, StyleSheet } from "react-native"
+import { Image, StyleSheet, View } from "react-native"
 
-
-import star from "../../../../assets/produtores/estrela.png"
-import starGray from "../../../../assets/produtores/estrelaCinza.png"
+import star from "../../assets/produtores/estrela.png"
 
 export default function Stars({
   quantity: oldQuantity,
   editable = false,
   big = false
 }){
-  return <Image source={star} style={styles.stars}/>
+  const styles = stylesFunction(big);
+  return <View style={styles.stars}>
+      <Image source={star} style={styles.star}/>
+      <Image source={star} style={styles.star}/>
+      <Image source={star} style={styles.star}/>
+      <Image source={star} style={styles.star}/>
+      <Image source={star} style={styles.star}/>
+  </View>
 }
 
-const styles = (big) => StyleSheet.create({
+const stylesFunction = (big) => StyleSheet.create({
   stars: {
+    flexDirection: "row"
+  },
+  star: {
     width: big ? 36: 12,
-    height: big ? 36: 12
+    height: big ? 36: 12,
+    marginRight: 2
   }
 })
